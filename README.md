@@ -1,20 +1,20 @@
-# AirBnB Clone - Web dynamic
+# AirBnB Clone - The Console
 
-## Resources
-**Read or watch:**
-- [Selector](https://intranet.alxswe.com/rltoken/Bl2mJVVG07XCP6E8qtsQMg)
-- [Get and set content](https://intranet.alxswe.com/rltoken/oM3b0a0FGTy6AQ_UJ201Yw)
-- [Manipulate CSS classes](https://intranet.alxswe.com/rltoken/LL2uScQvjWnj2ZEx2CzxXw)
-- [Manipulate DOM elements](https://intranet.alxswe.com/rltoken/6JtTz9SaNX3AyVXht4tMYA)
-- [Document ready](https://intranet.alxswe.com/rltoken/1AbzN1nEfBKoSjB-9kjmrA)
-- [Introduction](https://intranet.alxswe.com/rltoken/OGDoIOd0cdmwDJFJy4aw5w)
-- [GET & POST request](https://intranet.alxswe.com/rltoken/kmBzs_QPD72Oz--Yk80JHw)
-- [HTTP access control (CORS)](https://intranet.alxswe.com/rltoken/tzqJx5SS5cF1BW_lAnXqqg)
+The console is the first segment of the AirBnB project at Holberton School that will collectively cover fundamental concepts of higher level programming. The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
+
+**Functionalities of this command interpreter:**
+- Create a new object (ex: a new User or a new Place)
+- Retrieve an object from a file, a database etc...
+- Do operations on objects (count, compute stats, etc...)
+- Update attributes of an object
+- Destroy an object
 
 ## Table of Content
+- [Environment](https://github.com/jzamora5/AirBnB_clone_v3#environment)
 * [Installation](#installation)
 * [File Descriptions](#file-descriptions)
 * [Usage](#usage)
+- [Examples of use](https://github.com/jzamora5/AirBnB_clone_v3#examples-of-use)
 * [Bugs](#bugs)
 * [Authors](#authors)
 * [License](#license)
@@ -23,28 +23,23 @@
 This project is interpreted/tested on Ubuntu 14.04 LTS using python3 (version 3.4.3)
 
 ## Installation
-- Import JQuery 
-```
-<head>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-</head>
-```
-using [Flasgger](https://intranet.alxswe.com/rltoken/VmGDpw_DCN16OJt_UoqsDQ),
-```
-$ sudo apt-get install -y python3-lxml
-$ sudo pip3 install flask_cors # if it was not installed yet
-$ sudo pip3 install flasgger
-```
-jsonschema exception
-No module named 'pathlib2'
-`$ sudo pip3 install pathlib2`
-
-* Clone this repository: `git clone "https://github.com/JSPlacid/AirBnB_clone.git"`
+- Clone this repository: `git clone "https://github.com/JSPlacid/AirBnB_clone.git"`
 * Access AirBnb directory: `cd AirBnB_clone`
 * Run hbnb(interactively): `./console` and enter command
 * Run hbnb(non-interactively): `echo "<command>" | ./console.py`
 
 ## File Description
+[console.py](https://github.com/jzamora5/AirBnB_clone_v3/blob/master/console.py) - the console contains the entry point of the command interpreter. List of commands this console current supports:
+
+- `EOF` - exits console
+- `quit` - exits console
+- `<emptyline>` - overwrites default emptyline method and does nothing
+- `create` - Creates a new instance ofBaseModel, saves it (to the JSON file) and prints the id
+- `destroy` - Deletes an instance based on the class name and id (save the change into the JSON file).
+- `show` - Prints the string representation of an instance based on the class name and id.
+- `all` - Prints all string representation of all instances based or not on the class name.
+- `update` - Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file)
+
 #### `models/` directory contains classes used for this project:
 [base_model.py](/models/base_model.py) - The BaseModel class from which future classes will be derived
 * `def __init__(self, *args, **kwargs)` - Initialization of the base model
